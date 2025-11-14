@@ -9,8 +9,10 @@ import java.util.*;
  * @version 1.0
  */
 
-public class Main {
-    public static void main(String[] args) {
+public class Main
+{
+    public static void main(String[] args)
+    {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Калькулятор выражений");
@@ -19,21 +21,26 @@ public class Main {
         System.out.println("Пример: (2 + a) - (b + 3)");
         System.out.println();
 
-        while (true) {
+        while (true)
+        {
             try {
                 System.out.print("Введите выражение (или 'выход' для выхода): ");
                 String input = scanner.nextLine().trim();
 
-                if (input.equalsIgnoreCase("выход")) {
+                if (input.equalsIgnoreCase("выход"))
+                {
                     break;
                 }
 
-                if (input.isEmpty()) {
+                if (input.isEmpty())
+                {
                     continue;
                 }
 
                 // Проверка корректности
-                if (!Calculator.isValidExample(input)) {
+
+                if (!Calculator.isValidExample(input))
+                {
                     System.out.println("Ошибка: выражение записано некорректно!");
                     continue;
                 }
@@ -43,7 +50,8 @@ public class Main {
                 Calculator parser = new Calculator(input);
 
                 // Запрашиваем значения переменных
-                for (String var : variables) {
+                for (String var : variables)
+                {
                     System.out.print("Введите значение для " + var + ": ");
                     double value = scanner.nextDouble();
                     scanner.nextLine(); // очищаем буфер
